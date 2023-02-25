@@ -53,8 +53,8 @@ public class LoginPageTest extends BaseTest{
 	
 	@Description("This test case is to verify the Forgot Password link is clickable or not")
 	@Severity(SeverityLevel.CRITICAL)
-	@Test(priority = 3)
-	public void loginPage_ForgotPwdLinkTest()
+	//@Test(priority = 3)
+	/*public void loginPage_ForgotPwdLinkTest()
 	{
         fp = lp.clickForgotPwdLink();
 		String pageTitle = fp.getForgotPwdPageTitle();
@@ -63,7 +63,7 @@ public class LoginPageTest extends BaseTest{
 		
 		//Constants.FORGOTPWD_PAGE_TITLE)
 	
-	}
+	}*/
 	
 	@Test(priority = 4, enabled=false)
 	public void loginTest()

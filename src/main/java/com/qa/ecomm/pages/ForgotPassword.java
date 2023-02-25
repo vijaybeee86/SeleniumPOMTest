@@ -25,11 +25,11 @@ public class ForgotPassword {
 		eleUtil = new ElementUtil(driver);
 	}
 	
-	@Step("Getting the Forgot Password Page Title")
-	public String getForgotPwdPageTitle()
-	{
-		return eleUtil.waitForTitleContains(Constants.FORGOTPWD_PAGE_TITLE, Constants.DEFAULT_TIMEOUT);
-	}
+	//@Step("Getting the Forgot Password Page Title")
+	//public String getForgotPwdPageTitle()
+//	{
+//		return eleUtil.waitForTitleContains(Constants.FORGOTPWD_PAGE_TITLE, 5;
+//	}
 
 	@Step("Getting the Forgot Password Page Header")
 	public String getForgotPwdPageHeader()

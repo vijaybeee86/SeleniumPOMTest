@@ -236,30 +236,30 @@ public class ElementUtil {
 
 	/*************************** Wait Utils *****************************/
 
-	public Alert waitForAlert(int timeOut) {
+	public Alert waitForAlert(Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		return wait.until(ExpectedConditions.alertIsPresent());
 	}
 
-	public String getAlertText(int timeOut) {
+	public String getAlertText(Duration timeOut) {
 		String text = waitForAlert(timeOut).getText();
 		acceptAlert(timeOut);
 		return text;
 	}
 
-	public void acceptAlert(int timeOut) {
+	public void acceptAlert(Duration timeOut) {
 		waitForAlert(timeOut).accept();
 	}
 
-	public void dismissAlert(int timeOut) {
+	public void dismissAlert(Duration timeOut) {
 		waitForAlert(timeOut).dismiss();
 	}
 
-	public void sendKeysOnAlert(int timeOut, String value) {
+	public void sendKeysOnAlert(Duration timeOut, String value) {
 		waitForAlert(timeOut).sendKeys(value);
 	}
 
-	public String waitForTitleContains(String titleValue, int timeOut) {
+	public String waitForTitleContains(String titleValue, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		if (wait.until(ExpectedConditions.titleContains(titleValue))) {
 			return driver.getTitle();
@@ -267,7 +267,7 @@ public class ElementUtil {
 		return null;
 	}
 
-	public String waitForTitleIs(String fullTitle, int timeOut) {
+	public String waitForTitleIs(String fullTitle, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		if (wait.until(ExpectedConditions.titleIs(fullTitle))) {
 			return driver.getTitle();
@@ -275,7 +275,7 @@ public class ElementUtil {
 		return null;
 	}
 	
-	public String waitForUrlContains(String urlFraction, int timeOut) {
+	public String waitForUrlContains(String urlFraction, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		if(wait.until(ExpectedConditions.urlContains(urlFraction))) {
 			return driver.getCurrentUrl();
@@ -283,7 +283,7 @@ public class ElementUtil {
 		return null;
 	}
 	
-	public String waitForFullUrl(String urlValue, int timeOut) {
+	public String waitForFullUrl(String urlValue, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		if(wait.until(ExpectedConditions.urlToBe(urlValue))) {
 			return driver.getCurrentUrl();
@@ -292,22 +292,22 @@ public class ElementUtil {
 	}
 	
 	
-	public void waitForFrameAndSwitchToIt(String frameName, int timeOut) {
+	public void waitForFrameAndSwitchToIt(String frameName, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
 	}
 	
-	public void waitForFrameAndSwitchToIt(By frameLocator, int timeOut) {
+	public void waitForFrameAndSwitchToIt(By frameLocator, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
 	}
 	
-	public void waitForFrameAndSwitchToIt(int frameIndex, int timeOut) {
+	public void waitForFrameAndSwitchToIt(int frameIndex, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameIndex));
 	}
 	
-	public void waitForFrameAndSwitchToIt(WebElement frameElement, int timeOut) {
+	public void waitForFrameAndSwitchToIt(WebElement frameElement, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameElement));
 	}
@@ -320,7 +320,7 @@ public class ElementUtil {
 	 * @param timeOut
 	 * @return
 	 */
-	public WebElement waitForElementPresence(By locator, int timeOut) {
+	public WebElement waitForElementPresence(By locator, Duration timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
@@ -332,10 +332,10 @@ public class ElementUtil {
 	 * @param intervalTime
 	 * @return
 	 */
-	public WebElement waitForElementPresence(By locator, int timeOut, int intervalTime) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut, intervalTime);
-		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-	}
+	//public WebElement waitForElementPresence(By locator, int timeOut, int intervalTime) {
+		//WebDriverWait wait = new WebDriverWait(driver, timeOut, intervalTime);
+		//return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+//	}
 	
 	public WebElement waitForElementWithFluentWait(By locator, int timeOut, long pollingTime) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
