@@ -26,7 +26,7 @@ pipeline
         
         
         
-        stage('Test') {
+        stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/vijaybeee86/SeleniumPOMTest.git'
