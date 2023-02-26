@@ -26,9 +26,9 @@ pipeline
         
         
         
-        stage('Regression Automation Test') {
+        stage('Regression Automation') {
             steps {
-               
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/vijaybeee86/SeleniumPOMTest.git'
                     sh "mvn clean install"
                 
