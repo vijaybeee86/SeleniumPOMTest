@@ -7,8 +7,7 @@ pipeline
 
     stages 
     { 
-        
-        
+ 
         stage('Regression Automation') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
