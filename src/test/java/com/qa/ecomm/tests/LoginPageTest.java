@@ -69,6 +69,7 @@ public class LoginPageTest extends BaseTest{
 	public void loginTest()
 	{
 		lp.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim());
+		System.out.println("Successfully Logged in to the application");
 	}
 	
 }
