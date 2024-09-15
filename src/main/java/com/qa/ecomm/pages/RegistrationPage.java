@@ -7,6 +7,7 @@ public class RegistrationPage {
 	public void getRegistrationPage()
 	{
 		System.out.println("Page Title");
+		System.out.println("I am doing " + var);
 	}
 
 }

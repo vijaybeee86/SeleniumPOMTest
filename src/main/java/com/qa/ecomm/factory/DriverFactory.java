@@ -95,7 +95,7 @@ public class DriverFactory {
 		prop = new Properties();
 		
 		String envName = System.getProperty("env");
-		if(envName==null)
+		if(envName==null||envName=="prod".toLowerCase())
 		{
 			System.out.println("Running tets scripts in PROD");
 			try {
