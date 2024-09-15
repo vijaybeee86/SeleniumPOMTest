@@ -46,7 +46,7 @@ public class CartPage {
 		return driver.findElement(cartPrice).getText();
 	}
 
-	@Step("Getting the Cart Price")
+	@Step("Getting the Cart QTY")
 	public String getCartQTY()
 	{
 		return driver.findElement(cartQty).getText();
