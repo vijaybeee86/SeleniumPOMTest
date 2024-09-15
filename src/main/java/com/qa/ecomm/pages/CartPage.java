@@ -28,10 +28,16 @@ public class CartPage {
 	
 	//Page Actions
 	
-	@Step("Getting the Login Page Title")
+	@Step("Getting the Cart Page Title")
 	public String getCartPageTitle()
 	{
 		return driver.getTitle();
+	}
+
+	@Step("Getting the Cart Total")
+	public String getCartTotal()
+	{
+		return driver.findElement(cartTotal).getText();
 	}
 
 	@Step("Getting the Cart Price")
