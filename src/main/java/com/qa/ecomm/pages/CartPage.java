@@ -46,6 +46,12 @@ public class CartPage {
 		return driver.findElement(cartPrice).getText();
 	}
 
+	@Step("Getting the Cart Price")
+	public String getCartQTY()
+	{
+		return driver.findElement(cartQty).getText();
+	}
+
 	
 	
 
