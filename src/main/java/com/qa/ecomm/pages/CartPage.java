@@ -33,8 +33,12 @@ public class CartPage {
 	{
 		return driver.getTitle();
 	}
-	
 
+	@Step("Getting the Cart Price")
+	public String getCartPrice()
+	{
+		return driver.findElement(cartPrice).getText();
+	}
 
 	
 	
